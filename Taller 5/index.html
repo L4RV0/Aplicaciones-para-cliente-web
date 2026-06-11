@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Estudiantes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="app">
+        <section class="panel form-panel">
+            <div class="section-heading">
+                <p class="eyebrow">Taller 5</p>
+                <h1>Registro de Estudiantes</h1>
+            </div>
+
+            <form id="studentForm" novalidate>
+                <input type="hidden" id="studentId">
+
+                <div class="form-grid">
+                    <div class="field">
+                        <label for="cedula">Cedula</label>
+                        <input type="text" id="cedula" name="cedula" maxlength="10" placeholder="Ej: 0102030405">
+                        <small class="error" id="cedulaError"></small>
+                    </div>
+
+                    <div class="field">
+                        <label for="apellidos">Apellidos</label>
+                        <input type="text" id="apellidos" name="apellidos" placeholder="Ej: Perez Mora">
+                        <small class="error" id="apellidosError"></small>
+                    </div>
+
+                    <div class="field">
+                        <label for="nombres">Nombres</label>
+                        <input type="text" id="nombres" name="nombres" placeholder="Ej: Ana Sofia">
+                        <small class="error" id="nombresError"></small>
+                    </div>
+
+                    <div class="field">
+                        <label for="telefono">Telefono</label>
+                        <input type="text" id="telefono" name="telefono" maxlength="10" placeholder="Ej: 0991234567">
+                        <small class="error" id="telefonoError"></small>
+                    </div>
+
+                    <div class="field field-wide">
+                        <label for="direccion">Direccion</label>
+                        <input type="text" id="direccion" name="direccion" placeholder="Ej: Av. Central 123 y Norte">
+                        <small class="error" id="direccionError"></small>
+                    </div>
+
+                    <div class="field">
+                        <label for="correo">Correo electronico</label>
+                        <input type="email" id="correo" name="correo" placeholder="Ej: estudiante@correo.com">
+                        <small class="error" id="correoError"></small>
+                    </div>
+
+                    <div class="field">
+                        <label for="facultad">Facultad</label>
+                        <select id="facultad" name="facultad">
+                            <option value="">Seleccione una facultad</option>
+                            <option value="Ingenieria">Ingenieria</option>
+                            <option value="Ciencias Administrativas">Ciencias Administrativas</option>
+                            <option value="Ciencias de la Salud">Ciencias de la Salud</option>
+                            <option value="Educacion">Educacion</option>
+                            <option value="Jurisprudencia">Jurisprudencia</option>
+                        </select>
+                        <small class="error" id="facultadError"></small>
+                    </div>
+
+                    <div class="field">
+                        <label for="nivel">Nivel</label>
+                        <select id="nivel" name="nivel">
+                            <option value="">Seleccione un nivel</option>
+                            <option value="1">Primero</option>
+                            <option value="2">Segundo</option>
+                            <option value="3">Tercero</option>
+                            <option value="4">Cuarto</option>
+                            <option value="5">Quinto</option>
+                            <option value="6">Sexto</option>
+                            <option value="7">Septimo</option>
+                            <option value="8">Octavo</option>
+                            <option value="9">Noveno</option>
+                            <option value="10">Decimo</option>
+                        </select>
+                        <small class="error" id="nivelError"></small>
+                    </div>
+
+                    <div class="field">
+                        <label for="paralelo">Paralelo</label>
+                        <input type="text" id="paralelo" name="paralelo" maxlength="1" placeholder="Ej: A">
+                        <small class="error" id="paraleloError"></small>
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <button type="submit" id="saveButton">Guardar estudiante</button>
+                    <button type="button" id="clearButton" class="secondary">Limpiar</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="panel records-panel">
+            <div class="records-header">
+                <div>
+                    <p class="eyebrow">Almacenamiento local</p>
+                    <h2>Estudiantes registrados</h2>
+                </div>
+                <span id="counter" class="counter">0 registros</span>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Cedula</th>
+                            <th>Estudiante</th>
+                            <th>Contacto</th>
+                            <th>Facultad</th>
+                            <th>Nivel</th>
+                            <th>Paralelo</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentsTable"></tbody>
+                </table>
+            </div>
+
+            <p id="emptyMessage" class="empty-message">No hay estudiantes registrados todavia.</p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
